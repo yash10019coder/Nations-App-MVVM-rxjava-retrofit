@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity() {
         val progress_view = findViewById<ProgressBar>(R.id.progressBar)
         viewModel.countryListData.observe(this, Observer { countries ->
             countries?.let {
+                recyclerView.visibility = View.VISIBLE
                 countryListAdapter.updateCountries(it)
             }
         })
