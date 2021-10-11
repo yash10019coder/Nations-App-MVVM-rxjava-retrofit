@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Nations MVVM RX JAVA APP</string>
+    <string name="an_error_has_occured_while_loading_the_data">An error has occured while loading the data</string>
+</resources>
