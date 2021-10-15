@@ -6,7 +6,6 @@
     android:layout_height="wrap_content"
     android:layout_gravity="center_horizontal"
     android:layout_margin="3dp"
-    android:orientation="horizontal"
     android:padding="4dp">
 
     <ImageView
@@ -26,12 +25,14 @@
             android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Country" />
+            android:text="Country"
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/capital"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Capital" />
+            android:text="Capital"
+            android:textColor="@color/black" />
     </LinearLayout>
 </LinearLayout>

@@ -15,7 +15,9 @@ import com.yash10019coder.nationsmvvmrxjavaapp.viewModel.ListViewModel
 
 class MainActivity : AppCompatActivity() {
 
+    lateinit var list_error:TextView
     lateinit var viewModel: ListViewModel
+    lateinit var progress_view:ProgressBar
     lateinit var recyclerView:RecyclerView
     private val countryListAdapter = CountryListAdapter(arrayListOf())
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,15 +34,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun observeViewModel(viewModel: ListViewModel) {
-        val list_error = findViewById<TextView>(R.id.textView2)
-        val progress_view = findViewById<ProgressBar>(R.id.progressBar)
+        list_error = findViewById<TextView>(R.id.textView2)
+        progress_view = findViewById<ProgressBar>(R.id.progressBar)
         viewModel.countryListData.observe(this, Observer { countries ->
             countries?.let {
                 recyclerView.visibility = View.VISIBLE
                 countryListAdapter.updateCountries(it)
             }
         })
-        viewModel.loadingError.observe(this, Observer { isError ->
+        viewModel.loadingError.observe(this, Observer { isError:Boolean? ->
             isError?.let {
                 list_error.visibility =
                     if (it)
